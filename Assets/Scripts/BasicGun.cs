@@ -19,7 +19,9 @@ public class BasicGun : MonoBehaviour
             timer -= fireRate;
 
             // Shot - Vamos instanciar um BasicShot
-            Instantiate(basicShotModel, transform.position, Quaternion.identity);
+            GameObject shotGO = Instantiate(basicShotModel, transform.position, Quaternion.identity);
+            BasicShot basicShot = shotGO.GetComponent<BasicShot>();
+            basicShot.direction = transform.eulerAngles.z;
         }
     }
 }

@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055c4238322fdf44a9eb2e8f413532d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modeloInimigo: {fileID: 142706628267464069, guid: 7ab791617ab4fbc4da78ca7828dfc597, type: 3}
+  modeloInimigo: {fileID: 1235749774444320307, guid: bface6d2b045ce2429c6fbb9607b6d27, type: 3}
   intervalo: 1
   quantidade: 10
   listaPontos:
@@ -396,9 +396,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8268442331599802012, guid: e90ff46912e50a6448c068bc14c523ec, type: 3}
+      propertyPath: basicShotModel
+      value: 
+      objectReference: {fileID: 425313099177629488, guid: 681420b7c597ae84a88f755347981c6d, type: 3}
     - target: {fileID: 8268442333022104045, guid: e90ff46912e50a6448c068bc14c523ec, type: 3}
       propertyPath: m_Name
       value: Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268442333022104045, guid: e90ff46912e50a6448c068bc14c523ec, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8268442333022104047, guid: e90ff46912e50a6448c068bc14c523ec, type: 3}
       propertyPath: m_RootOrder
