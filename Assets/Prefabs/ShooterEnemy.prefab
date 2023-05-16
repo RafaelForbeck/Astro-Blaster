@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1235749774444320304}
   - component: {fileID: 1235749774444320318}
   - component: {fileID: 1235749774444320319}
-  - component: {fileID: 1235749774444320316}
   - component: {fileID: 365457228447778712}
+  - component: {fileID: 573124547844227769}
   m_Layer: 7
   m_Name: ShooterEnemy
   m_TagString: Untagged
@@ -126,19 +126,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1235749774444320316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1235749774444320307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19eff50b78881c44bb94f2f4732c34ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 5
 --- !u!114 &365457228447778712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +140,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   listaPontos: []
+--- !u!114 &573124547844227769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235749774444320307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe876f9f9991874fb467a0f98ce1aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 5
 --- !u!1 &7515194162744102505
 GameObject:
   m_ObjectHideFlags: 0
