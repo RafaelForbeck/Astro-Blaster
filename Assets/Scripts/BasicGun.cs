@@ -5,8 +5,9 @@ using UnityEngine;
 public class BasicGun : MonoBehaviour
 {
     public GameObject basicShotModel;
-    public float fireRate;
-    float timer;
+    private float fireRate;
+    private float shotSpeed;
+    private float timer;
     
     void Update()
     {
@@ -18,10 +19,26 @@ public class BasicGun : MonoBehaviour
             // Fazemos assim para não acumular erro
             timer -= fireRate;
 
-            // Shot - Vamos instanciar um BasicShot
-            GameObject shotGO = Instantiate(basicShotModel, transform.position, Quaternion.identity);
-            BasicShot basicShot = shotGO.GetComponent<BasicShot>();
-            basicShot.direction = transform.eulerAngles.z;
+            Shoot();
         }
+    }
+
+    void Shoot()
+    {
+        // Shot - Vamos instanciar um BasicShot
+        GameObject shotGO = Instantiate(basicShotModel, transform.position, Quaternion.identity);
+        BasicShot basicShot = shotGO.GetComponent<BasicShot>();
+        basicShot.SetDirection(transform.eulerAngles.z);
+        basicShot.SetSpeed(shotSpeed);
+    }
+
+    public void SetFireRate(float fireRate)
+    {
+        this.fireRate = fireRate;
+    }
+
+    public void SetShotSpeed(float shotSpeed)
+    {
+        this.shotSpeed = shotSpeed;
     }
 }

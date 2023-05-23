@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class BasicShot : MonoBehaviour
 {
-    public float speed;
-    public float direction;
+    private float speed;
+    private float direction;
 
     private void Start()
     {
         transform.Rotate(0f, 0f, direction);
     }
 
-    void Update()
+    private void Update()
+    {
+        Move();
+    }
+
+    private void Move()
     {
         transform.position += transform.up * speed * Time.deltaTime;
 
@@ -20,5 +25,14 @@ public class BasicShot : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void SetDirection(float direction) {
+        this.direction = direction;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
     }
 }
