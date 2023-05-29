@@ -5,30 +5,20 @@ using UnityEngine;
 public class Guns : MonoBehaviour
 {
     public List<BasicGun> gunsList;
-    private float fireRate;
-    private float shotSpeed;
 
-    private void Start()
-    {
-        GunsSetup();
-    }
-
-    private void GunsSetup()
+    public void SetFireRate(float fireRate)
     {
         foreach (var gun in gunsList)
         {
             gun.SetFireRate(fireRate);
-            gun.SetShotSpeed(shotSpeed);
         }
-    }
-
-    public void SetFireRate(float fireRate)
-    {
-        this.fireRate = fireRate;
     }
 
     public void SetShotSpeed(float shotSpeed)
     {
-        this.shotSpeed = shotSpeed;
+        foreach (var gun in gunsList)
+        {
+            gun.SetShotSpeed(shotSpeed);
+        }
     }
 }

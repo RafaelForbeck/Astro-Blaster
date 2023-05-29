@@ -14,8 +14,10 @@ public class PowerUpManager : MonoBehaviour
 
     private void GunsSetup(int level)
     {
-        guns.SetFireRate(GetFireRate(level));
-        guns.SetShotSpeed(GetShotSpeed(level));
+        var fireRate = GetFireRate(level);
+        guns.SetFireRate(fireRate);
+        var shotSpeed = GetShotSpeed(level);
+        guns.SetShotSpeed(shotSpeed);
     }
 
     private float GetFireRate(int level)
