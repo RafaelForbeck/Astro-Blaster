@@ -18,6 +18,8 @@ public class PowerUpManager : MonoBehaviour
         guns.SetFireRate(fireRate);
         var shotSpeed = GetShotSpeed(level);
         guns.SetShotSpeed(shotSpeed);
+        var toggleGuns = GetToggleGuns(level);
+        guns.SetToggleGuns(toggleGuns);
     }
 
     private float GetFireRate(int level)
@@ -39,12 +41,26 @@ public class PowerUpManager : MonoBehaviour
         switch (level)
         {
             case 1: return 20f;
-            case 2: return 30f;
-            case 3: return 40f;
-            case 4: return 50f;
-            case 5: return 60f;
-            case 6: return 70f;
-            default: return 70;
+            case 2: return 25f;
+            case 3: return 30f;
+            case 4: return 35f;
+            case 5: return 40f;
+            case 6: return 45f;
+            default: return 45;
+        }
+    }
+
+    private List<bool> GetToggleGuns(int level)
+    {
+        switch (level)
+        {
+            case 1: return new List<bool>() { false, false, true, false, false };
+            case 2: return new List<bool>() { false, true, false, true, false };
+            case 3: return new List<bool>() { false, true, true, true, false };
+            case 4: return new List<bool>() { false, true, true, true, false };
+            case 5: return new List<bool>() { true, true, false, true, true };
+            case 6: return new List<bool>() { true, true, true, true, true };
+            default: return new List<bool>() { true, true, true, true, true };
         }
     }
 
@@ -54,6 +70,7 @@ public class PowerUpManager : MonoBehaviour
         {
             level++;
             GunsSetup(level);
+            Destroy(collision.gameObject);
         }
     }
 }

@@ -21,4 +21,13 @@ public class Guns : MonoBehaviour
             gun.SetShotSpeed(shotSpeed);
         }
     }
+
+    public void SetToggleGuns(List<bool> turnOn)
+    {
+        for (int i = 0; i < gunsList.Count; i++)
+        {
+            var isActive = turnOn[i];
+            gunsList[i].SetActiveGun(isActive);
+        }
+    }
 }

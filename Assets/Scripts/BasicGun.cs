@@ -41,4 +41,10 @@ public class BasicGun : MonoBehaviour
     {
         this.shotSpeed = shotSpeed;
     }
+
+    public void SetActiveGun(bool isActive)
+    {
+        gameObject.SetActive(isActive);
+        timer = 0;
+    }
 }
